@@ -1,0 +1,19 @@
+<%= image_tag @post.image(:large) if @post.image? %>
+
+<h2>
+	<%= @post.title %> 
+</h2>
+
+<%= md @post.body %>
+
+	<%= render "author" %>
+	<%= render "tags" %>
+	<%= render "like" if current_user %>
+	<%= render "comments" %>
+	<%= render "comments_form" %>
+	<%= render "actions" if current_user == @post.user %>
+
+<div class = "category">
+	<%= link_to @post.category.title, category_path(@post.category) if @post.category %> 
+</div>
+

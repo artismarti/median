@@ -1,0 +1,9 @@
+<h3>comments</h3>
+	<% if @post.comments.any? %>
+		<% @post.comments.each do |comment| %>
+			<h4><%= comment.user.username %> says:</h4>
+			<p><%= simple_format comment.body %></p>
+		<% end %>
+	<% else %>
+		no comments yet.
+		<% end %>

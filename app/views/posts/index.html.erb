@@ -1,0 +1,15 @@
+<h2>featured:</h2>
+<%= render partial: "post", collection: @featured %>
+
+<h2>boring posts:</h2>
+<%= render partial: "post", collection: @posts %>
+
+<h2> all tags </h2>
+<ul>
+	<% @tags.each do|tag| %>
+		<li>
+			<%= link_to tag.name, root_path(tag: tag.name) %>
+			<%= tag.count %>
+			<% end %>
+		</li>
+</ul>

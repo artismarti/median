@@ -1,0 +1,5 @@
+<div class ="author">
+	<%= image_tag @post.user.avatar(:thumbnail) %>
+	<%= link_to @post.user.username, user_path(@post.user) %>
+	<%= @post.user.bio %>
+</div>

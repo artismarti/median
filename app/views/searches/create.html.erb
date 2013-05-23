@@ -1,0 +1,10 @@
+<h2>you searched for <%= @query %></h2>
+
+<%= render partial: "posts/post", collection: @posts %>
+
+<% if @users.any? %>
+	<h3>users</h3>
+		<% @users.each do |user| %>
+			<%= link_to highlight(user.username,@query), user_path(user) %>
+		<% end %>
+<% end %>

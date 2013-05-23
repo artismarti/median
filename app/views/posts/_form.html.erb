@@ -1,0 +1,9 @@
+
+<%= simple_form_for @post do |f| %>
+	<%= f.input :title %>
+	<%= f.input :body %>
+	<%= f.input :image %>
+	<%= f.input :category_id, as: :radio_buttons, collection: Category.order(:title) %>
+	<%= f.input :tag_list %>
+	<%= f.button :submit %>
+<% end %>

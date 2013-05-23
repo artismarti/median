@@ -1,0 +1,18 @@
+<div class="like">
+	<% if current_user==@post.user %>
+		you're so vain. you probably think this post is about you.
+	<% elsif current_user.likes_post?(@post) %>
+		<%= link_to "unlike?", post_like_path(@post), method: :delete %>
+	<% else %>
+		<%= link_to "like?", post_like_path(@post), method: :post %>
+	<% end %>
+	<p><%= pluralize @post.likes.size, "like" %></p>
+	<ul>
+	<% @post.liked_users.each do |user| %>
+	<%= link_to user_path(user) do %>
+		<%= image_tag(user.avatar(:thumbnail)) %>
+		<%= user.username %>
+		<% end %>
+	<% end %>
+	</ul>
+</div>

@@ -1,0 +1,6 @@
+<div class = "tags">
+		<h3>tags:</h3>
+		<% @post.tags.each do |t| %>
+			<%= link_to t.name, root_path(tag: t.name) %>
+			<% end %>
+</div>
