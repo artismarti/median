@@ -69,7 +69,7 @@ Median::Application.configure do
   config.paperclip_defaults = {
     storage: :s3,
     s3_credentials: {
-      bucket: "arti-median"
+      bucket: "arti-median",
       access_key_id: "AKIAILRXML4WCMLLMS4A",
       secret_access_key: "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"
     }
